@@ -2,7 +2,6 @@ package chap07.sect06;
 public class BlockingQueueTest {
   public static void main(String[] args) throws InterruptedException {
     var queue = new java.util.concurrent.ArrayBlockingQueue<String>(2);
-
     java.util.stream.IntStream.range(0, 4).forEach( i -> new Thread(() -> {
       try {
         queue.put(Thread.currentThread().getName());
