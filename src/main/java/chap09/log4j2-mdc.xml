@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug" strict="true"
+	xmlns="http://logging.apache.org/log4j/2.0/config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://logging.apache.org/log4j/2.0/config 
+           https://raw.githubusercontent.com/apache/logging-log4j2/master/log4j-core/src/main/resources/Log4j-config.xsd">
+	<Appenders>
+		<Console name="myConsole">
+			<PatternLayout pattern="%d - %-5p %X{myMDC} - %t:%C.%M@%L %m%n"></PatternLayout>
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="DEBUG">
+			<AppenderRef ref="myConsole" />
+		</Root>
+	</Loggers>
+</Configuration>

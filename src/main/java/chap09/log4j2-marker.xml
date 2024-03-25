@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug" strict="true"
+	xmlns="http://logging.apache.org/log4j/2.0/config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://logging.apache.org/log4j/2.0/config 
+           https://raw.githubusercontent.com/apache/logging-log4j2/master/log4j-core/src/main/resources/Log4j-config.xsd">
+  <Properties>
+    <Property name="myLayout">%d [%t] %-5level %logger{36} - %msg%n</Property> 
+  </Properties>
+	<Appenders>
+		<File name="file1" fileName="d:/m1.log">
+			<PatternLayout pattern="${myLayout}"/>
+			<MarkerFilter marker="m1" onMatch="ACCEPT" onMismatch="DENY" />
+		</File>
+		<File name="file2" fileName="d:/m2.log" >
+			<MarkerFilter marker="m2" onMatch="ACCEPT" onMismatch="DENY" />
+		</File>
+	</Appenders>
+	<Loggers>
+		<Root level="DEBUG">
+			<AppenderRef ref="file1" />
+			<AppenderRef ref="file2" />
+		</Root>
+	</Loggers>
+</Configuration>

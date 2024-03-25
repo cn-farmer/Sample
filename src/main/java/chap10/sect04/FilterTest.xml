@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "./log4j.dtd"-->
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "./log4j.dtd">
+<log4j:configuration>
+	<appender name="a1" class="org.apache.log4j.DailyRollingAppender">
+		<filter class="">
+			<param name="" value=""/>	
+		</filter>
+		<filter class=""></filter>
+		<filter class=""></filter>
+		<filter class=""></filter>
+	</appender>
+</log4j:configuration>

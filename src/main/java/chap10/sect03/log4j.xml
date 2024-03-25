@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "./log4j.dtd">
+<log4j:configuration threshold="${THRESHOLD_ALL}">
+	<appender name="myFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="D:/log.txt"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %30.30c - %m%n"/>	
+		</layout>
+	</appender>	
+	<appender name="myConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.SimpleLayout"></layout>
+	</appender>
+	<logger name="chap10.sect03.XmlFileInit" additivity="true">
+		<param name="additivity" value="${ADDITIVITY_FLAG}"/>
+		<level value="=INHERITED"></level>	
+		<appender-ref ref="myFileAppender"/>
+		<appender-ref ref="myConsoleAppender"/>
+	</logger>
+</log4j:configuration>
